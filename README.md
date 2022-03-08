@@ -17,7 +17,7 @@ func ElaborateNotFound(username string) error {
 
 func main() {
 	err := ElaborateNotFound("foobar") 
-	_ = errors.Is(err, ErrNotFound) // true
+	fmt.Println(errors.Is(err, ErrNotFound)) // true
 }
 ```
 

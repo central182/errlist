@@ -28,7 +28,7 @@ func (e ErrorWrapper) Unwrap() error {
 func Example() {
 	err := errlist.New(ErrFoo, fmt.Errorf("wrapped: %w", ErrBar), ErrorWrapper{Err: ErrBaz})
 	fmt.Println(err)
-	fmt.Println(errors.Is(err, errFoo))
-	fmt.Println(errors.Is(err, errBar))
-	fmt.Println(errors.Is(err, errBaz))
+	fmt.Println(errors.Is(err, ErrFoo))
+	fmt.Println(errors.Is(err, ErrBar))
+	fmt.Println(errors.Is(err, ErrBaz))
 }
